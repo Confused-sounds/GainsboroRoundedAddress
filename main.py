@@ -1,7 +1,7 @@
 import tkinter as tk
 
 window = tk.Tk()
-window.title("y r u gey?")
+window.title("gey?")
 window.geometry("300x300")
 
 hello = tk.Label(text="y r u gey?")
