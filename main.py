@@ -1,19 +1,28 @@
 import tkinter as tk
 from tkinter import ttk
-import tkinter.font
-def _innit_():
-    Menu = tk.Tk()
-    Menu.title("Gam")
-    Menu.geometry("723x373")
+from PIL import Image, ImageTk
 
+window = tk.Tk()
+window.title("Gam")
+window.geometry("300x300")
+   
 
-    hello = ttk.Label(text="Main Menu")
-    Desired_font = tkinter.font.Font(family = "Comic Sans MS", size = 10)
-    hello.place(relx = .5, rely = .1, anchor="n",)
-    hello.configure(font = Desired_font)
+def clack():
+    image = Image.open("MicrosoftTeams-image (1).png") 
+    photo = ImageTk.PhotoImage(image)
+    label = tk.Label(image=photo)
+    label.pack()
+    window.mainloop()
     
-    button = ttk.Button(text="Settings")
-    button.place(relx = .5, rely = .5, anchor="center")
+hello = tk.Label(text="Main Menu")
+hello.place(relx = .5, rely = .7, anchor="n",)
+hello.pack()
+button = tk.Button(text="Yes",
+                   command=clack)
+button.place(relx = .5, rely = .9, anchor="center")
+button.pack()
+
+    
 
 
 
@@ -22,7 +31,4 @@ def _innit_():
 
 
 
-
-
-_innit_()
 tk.mainloop()

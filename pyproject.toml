@@ -11,6 +11,7 @@ replit = "^3.2.4"
 Flask = "^2.2.0"
 pyttk = "^0.3.2"
 tk = "^0.1.0"
+Pillow = "^9.5.0"
 
 [tool.poetry.dev-dependencies]
 debugpy = "^1.6.2"
