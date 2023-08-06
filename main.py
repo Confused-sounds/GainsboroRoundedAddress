@@ -1,32 +1,43 @@
 import tkinter as tk
 from tkinter import ttk
+from tkinter import messagebox
 from PIL import Image, ImageTk
 
 window = tk.Tk()
-window.title("Gam")
+window.title("Diff select")
 window.geometry("300x300")
-   
-
-def picture():
-        image = Image.open("NUH_UH.png") 
-        photo = ImageTk.PhotoImage(image)
-        label = tk.Label(image=photo)
-        label.pack()
-        button.config(state=tk.DISABLED)
-        print ("Complete hard mode to unlock")
-        window.mainloop()
 
 
-hello = tk.Label(text="Main Menu")
-hello.place(relx = .5, rely = .7, anchor="n",)
+def Ezmod():
+    button.destroy()
+    butt2.destroy()
+    butt3.destroy()
+    butt4.destroy()
+    hello.destroy()
+    window.destroy()
+    Ezmod.run()
+
+
+def Nuh_uh():
+    image = Image.open("NUH_UH.png")
+    photo = ImageTk.PhotoImage(image)
+    label = tk.Label(image=photo)
+    label.pack()
+    button.config(state=tk.DISABLED)
+    messagebox.showerror('NUH UH', 'Complete Hard mode to unlock')
+    window.mainloop()
+
+
+hello = tk.Label(text="Select Diff")
+hello.place(relx=.5, rely=.7)
 hello.pack()
-button = tk.Button(text="I am no mere child",
-                   command=picture)
-button.place(relx = .5, rely = .9, anchor="center")
+button = tk.Button(text="I am no mere child", command=Nuh_uh)
 button.pack()
-
-
-
-
+butt2 = tk.Button(text="Hard")
+butt2.pack()
+butt3 = tk.Button(text="Normal")
+butt3.pack()
+butt4 = tk.Button(text="Easy", command=Ezmod)
+butt4.pack()
 
 tk.mainloop()
