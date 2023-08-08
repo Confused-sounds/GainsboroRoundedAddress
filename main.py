@@ -8,16 +8,6 @@ window.title("Diff select")
 window.geometry("300x300")
 
 
-def Ezmod():
-    button.destroy()
-    butt2.destroy()
-    butt3.destroy()
-    butt4.destroy()
-    hello.destroy()
-    window.destroy()
-    Ezmod.run()
-
-
 def Nuh_uh():
     image = Image.open("NUH_UH.png")
     photo = ImageTk.PhotoImage(image)
@@ -26,6 +16,14 @@ def Nuh_uh():
     button.config(state=tk.DISABLED)
     messagebox.showerror('NUH UH', 'Complete Hard mode to unlock')
     window.mainloop()
+
+
+def Ezmody():
+    window.destroy()
+    import Modes 
+    from Modes import Ezmod
+    Modes
+    Ezmod
 
 
 hello = tk.Label(text="Select Diff")
@@ -37,7 +35,7 @@ butt2 = tk.Button(text="Hard")
 butt2.pack()
 butt3 = tk.Button(text="Normal")
 butt3.pack()
-butt4 = tk.Button(text="Easy", command=Ezmod)
+butt4 = tk.Button(text="Easy", command=Ezmody)
 butt4.pack()
 
 tk.mainloop()
