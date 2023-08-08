@@ -1,5 +1,4 @@
 import tkinter as tk
-from tkinter import ttk
 from tkinter import messagebox
 from PIL import Image, ImageTk
 
@@ -20,10 +19,34 @@ def Nuh_uh():
 
 def Ezmody():
     window.destroy()
-    import Modes 
+    import Modes
     from Modes import Ezmod
     Modes
     Ezmod
+
+
+def Mid():
+    window.destroy()
+    import Modes
+    from Modes import Normy
+    Modes
+    Normy
+
+
+def Hard():
+    window.destroy()
+    import Modes
+    from Modes import Harder
+    Modes
+    Harder
+
+
+def NOMERECHILD():
+    window.destroy
+    import Modes
+    from Modes import Mathinomics
+    Modes
+    Mathinomics
 
 
 hello = tk.Label(text="Select Diff")
@@ -31,9 +54,9 @@ hello.place(relx=.5, rely=.7)
 hello.pack()
 button = tk.Button(text="I am no mere child", command=Nuh_uh)
 button.pack()
-butt2 = tk.Button(text="Hard")
+butt2 = tk.Button(text="Hard", command=Hard)
 butt2.pack()
-butt3 = tk.Button(text="Normal")
+butt3 = tk.Button(text="Normal", command=Mid)
 butt3.pack()
 butt4 = tk.Button(text="Easy", command=Ezmody)
 butt4.pack()
