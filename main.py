@@ -2,11 +2,14 @@ import tkinter as tk
 import time
 from tkinter import messagebox
 from PIL import Image, ImageTk
+import Modes
 
 window = tk.Tk()
 window.title("Gam")
 window.geometry("300x300")
 
+    
+    
 
 def leaf():
     Label.destroy()
@@ -19,7 +22,6 @@ def leaf():
 
 def Ezmody():
     window.destroy()
-    import Modes
     from Modes import Ezmod
     Modes
     Ezmod
@@ -27,7 +29,6 @@ def Ezmody():
 
 def Mid():
     window.destroy()
-    import Modes
     from Modes import Normy
     Modes
     Normy
@@ -35,7 +36,6 @@ def Mid():
 
 def Hard():
     window.destroy()
-    import Modes
     from Modes import Harder
     Modes
     Harder
@@ -43,7 +43,6 @@ def Hard():
 
 def NOMERECHILD():
     window.destroy()
-    import Modes
     from Modes import Mathinomics
     Modes
     Mathinomics
@@ -53,10 +52,11 @@ def Diff_select():
     Label.destroy()
     Buttn.destroy()
     Exit.destroy()
+    global butter
     hello = tk.Label(text="Select Diff")
     hello.place(relx=.5, rely=.7)
     hello.pack()
-    butter = tk.Button(text="I am no mere child", command=Nuh_uh)
+    butter = tk.Button(text="I Am No Mere Child", command=Nuh_uh)
     butter.pack()
     butt2 = tk.Button(text="Hard", command=Hard)
     butt2.pack()
@@ -67,11 +67,11 @@ def Diff_select():
 
 
 def Nuh_uh():
+    butter.config(state=tk.DISABLED)
     image = Image.open("NUH_UH.png")
     photo = ImageTk.PhotoImage(image)
     label = tk.Label(image=photo)
     label.pack()
-    butter.config(state=tk.DISABLED)
     messagebox.showerror('NUH UH', 'Complete Hard mode to unlock')
     window.mainloop()
 
