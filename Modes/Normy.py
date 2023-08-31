@@ -11,3 +11,13 @@ messagebox.showinfo(
     "Mid",
     "Normal Mode Selected",
 )
+
+
+def go_home():
+    windr.destroy()
+    import main
+    main
+
+
+nutt = tk.Button(text="Home", command=go_home)
+nutt.pack()

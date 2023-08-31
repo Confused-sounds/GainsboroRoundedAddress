@@ -11,3 +11,12 @@ messagebox.showinfo(
     "GOW",
     "EX Mode Selected",
 )
+
+
+def go_home():
+    import main
+    main
+
+
+nutt = tk.Button(text="Home", command=go_home)
+nutt.pack()
