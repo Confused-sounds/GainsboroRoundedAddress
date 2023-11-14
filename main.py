@@ -4,17 +4,16 @@ from tkinter import messagebox
 from PIL import Image, ImageTk
 import Modes
 
+
 window = tk.Tk()
 window.title("Gam")
 window.geometry("300x300")
-global butter
 
 
 def leaf():
     Label.destroy()
     Exit.destroy()
     Buttn.destroy()
-    Global.destroy()
     messagebox.showinfo('Closing', 'ight')
     time.sleep(2)
     exit()
@@ -22,10 +21,9 @@ def leaf():
 
 def Ezmody():
     window.destroy()
-    from Modes import Ezmod
+    from Modes import Ezmod         
     Modes
     Ezmod
-
 
 def Mid():
     window.destroy()
@@ -43,8 +41,27 @@ def Hard():
 
 def NOMERECHILD():
     window.destroy()
-    from Modes import Mathinomics
-    Modes+
+    from Modes import Mathinomics        
+    Modes
+    Mathinomics
+
+
+def Diff_select():
+    Label.destroy()
+    Buttn.destroy()
+    Exit.destroy()
+    global butter
+    hello = tk.Label(text="Select Diff")
+    hello.place(relx=.5, rely=.7)
+    hello.pack()
+    butter = tk.Button(text="I Am No Mere Child", command=Nuh_uh)
+    butter.pack()
+    butt2 = tk.Button(text="Hard", command=Hard)
+    butt2.pack()
+    butt3 = tk.Button(text="Normal", command=Mid)
+    butt3.pack()
+    butt4 = tk.Button(text="Easy", command=Ezmody)
+    butt4.pack()
 
 
 def Nuh_uh():
@@ -54,13 +71,10 @@ def Nuh_uh():
     label = tk.Label(image=photo)
     label.pack()
     messagebox.showerror('NUH UH', 'Complete Hard mode to unlock')
+    label.destroy()
     window.mainloop()
 
 
-def globald():
-    while Beat_mode == True:
-        print("IT LIIIIIIIVES!!!!!!!!!!!")
-        break
 
 
 Label = tk.Label(text="MATH GAME")
@@ -69,7 +83,5 @@ Buttn = tk.Button(text="Play", command=Diff_select)
 Buttn.pack()
 Exit = tk.Button(text="Exit", command=leaf)
 Exit.pack()
-Global = tk.Button(text="Global", command=globald)
-Global.pack()
 
 tk.mainloop()

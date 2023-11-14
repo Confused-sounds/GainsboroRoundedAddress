@@ -12,25 +12,48 @@ messagebox.showinfo(
     "Hard Mode Selected",
 )
 
+complete = False
+Score = 0
+Question = 0
+List = []
+while complete == False:
+    Add1 = random.randint(1, 10)
+    Add2 = random.randint(1, 10)
+    Ans1 = Add1 + Add2
+    List.append(Ans1)
+    Ques1 = simpledialog.askinteger("Question", "What is {} + {} ".format(Add1, Add2))
+    if Question == 10:
+        messagebox.showinfo("Game Over", "Game Over, Your Score Was {}".format(Score))
+        List = []
+        complete = True
+    elif Ques1 in List:
+            Score += 1
+            messagebox.showinfo("Correct", "Correct, +1 Score!")
+            Question += 1
+            List = []
+            print (Question)
+            print(Score)
+
+
+    else:
+        messagebox.showerror("WRONG", "Incorrect")
+        Question += 1
+        print(Question)
+        print(Score)
+        List = []
+
+
+nutt = tk.Button(text="Home", command=go_home)
+nutt.pack()
 
 def go_home():
+    import Mode_lock
+    Mode_lock.Did_it()
+    Mode_lock.Beat_mode.append("This")
     windr.destroy()
     import main
     main
 
-
-global Beat_mode
-Beat_mode = None
-
-while Beat_mode == None:
-    Beat_mode = True
-    try:
-        if Beat_mode == True:
-            messagebox.showinfo("POGCHAMP!!!!!",
-                                "'I Am No Mere Child' Difficulty Unlocked!")
-    except:
-        if Beat_mode == None:
-            break
 
 nutt = tk.Button(text="Home", command=go_home)
 nutt.pack()

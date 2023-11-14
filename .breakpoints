@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.py": [
+    "Modes/Normy.py": [
       {
-        "id": "fc2cf5b8-e9d9-458d-b9f3-b3ea4b9bde4f",
-        "line": 49,
-        "version": 5879,
-        "index": 707
+        "id": "ecd96a5d-3f37-40f7-8c72-8fb043ecf388",
+        "line": 50,
+        "version": 1593,
+        "index": 1203
       }
     ]
   }
