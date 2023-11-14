@@ -30,7 +30,7 @@ while complete == False:
     Add2 = random.randint(1, 10)
     Ans1 = Add1 + Add2
     List.append(Ans1)
-    Ques1 = simpledialog.askinteger("Question", "What is {} + {} ".format(Add1, Add2))
+    Ques1 = simpledialog.askinteger("Question {}, Score {}/10".format(Question, Score), "What is {} + {} ".format(Add1, Add2))
     if Question == 10:
         messagebox.showinfo("Game Over", "Game Over, Your Score Was {}".format(Score))
         List = []
