@@ -70,7 +70,7 @@ def Nuh_uh():
     photo = ImageTk.PhotoImage(image)
     label = tk.Label(image=photo)
     label.pack()
-    messagebox.showerror('NUH UH', 'Complete Hard mode to unlock')
+    messagebox.showerror('NUH UH', 'Mode Incomplete')
     label.destroy()
     window.mainloop()
 

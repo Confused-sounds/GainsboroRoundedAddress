@@ -1,9 +1,7 @@
 import tkinter as tk
-import math
 import random
 from tkinter import messagebox
 from tkinter import simpledialog
-from PIL import Image, ImageTk
 
 windr = tk.Tk()
 windr.title("Easy")
@@ -13,12 +11,11 @@ messagebox.showinfo(
     "Easy Mode Selected",
 )
 
+
 def go_home():
     windr.destroy()
     import main
     main
-
-
 
 
 complete = False
@@ -30,73 +27,27 @@ while complete == False:
     Add2 = random.randint(1, 10)
     Ans1 = Add1 + Add2
     List.append(Ans1)
-    Ques1 = simpledialog.askinteger("Question {}, Score {}/10".format(Question, Score), "What is {} + {} ".format(Add1, Add2))
+    Question += 1
+    Ques1 = simpledialog.askinteger(
+        "Question {}, Score {}/10".format(Question, Score),
+        "What is {} + {} ".format(Add1, Add2))
+
     if Question == 10:
-        messagebox.showinfo("Game Over", "Game Over, Your Score Was {}".format(Score))
+        messagebox.showinfo("Game Over",
+                            "Game Over, Your Score Was {}/10".format(Score))
         List = []
         complete = True
     elif Ques1 in List:
-            Score += 1
-            messagebox.showinfo("Correct", "Correct, +1 Score!")
-            Question += 1
-            List = []
-            print (Question)
-            print(Score)
-
+        Score += 1
+        messagebox.showinfo("Correct", "Correct, +1 Score!")
+        List = []
 
     else:
         messagebox.showerror("WRONG", "Incorrect")
-        Question += 1
-        print(Question)
-        print(Score)
         List = []
-
 
 nutt = tk.Button(text="Home", command=go_home)
 nutt.pack()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 def go_home():

@@ -2,7 +2,6 @@ import tkinter as tk
 import random
 from tkinter import messagebox
 from tkinter import simpledialog
-from PIL import Image, ImageTk
 
 windr = tk.Tk()
 windr.title("EX")
@@ -16,39 +15,70 @@ Score = 0
 Question = 0
 List = []
 while complete == False:
-    Add1 = random.randint(1, 10)
-    Add2 = random.randint(1, 10)
-    Ans1 = Add1 + Add2
-    List.append(Ans1)
-    Ques1 = simpledialog.askinteger("Question", "What is {} + {} ".format(Add1, Add2))
-    if Question == 10:
-        messagebox.showinfo("Game Over", "Game Over, Your Score Was {}".format(Score))
-        List = []
-        complete = True
-    elif Ques1 in List:
+    Add1 = random.randint(50, 100)
+    Add2 = random.randint(50, 100)
+    Thingy = random.randint(1, 3)
+    if Thingy == 1:
+        Ans1 = Add1 + Add2
+        List.append(Ans1)
+        Question += 1
+        Ques1 = simpledialog.askinteger(
+            "Question {}, Score {}/15".format(Question, Score),
+            "What is {} + {} ".format(Add1, Add2))
+        if Question == 15:
+            messagebox.showinfo(
+                "Game Over", "Game Over, Your Score Was {}/15".format(Score))
+            List = []
+            complete = True
+        elif Ques1 in List:
             Score += 1
             messagebox.showinfo("Correct", "Correct, +1 Score!")
-            Question += 1
             List = []
-            print (Question)
-            print(Score)
 
+        else:
+            messagebox.showerror("WRONG", "Incorrect")
+            List = []
 
-    else:
-        messagebox.showerror("WRONG", "Incorrect")
+    elif Thingy == 2:
+        Ans1 = Add1 - Add2
+        List.append(Ans1)
         Question += 1
-        print(Question)
-        print(Score)
-        List = []
+        Ques1 = simpledialog.askinteger(
+            "Question {}, Score {}/15".format(Question, Score),
+            "What is {} - {} ".format(Add1, Add2))
+        if Question == 15:
+            messagebox.showinfo(
+                "Game Over", "Game Over, Your Score Was {}/15".format(Score))
+            List = []
+            complete = True
+        elif Ques1 in List:
+            Score += 1
+            messagebox.showinfo("Correct", "Correct, +1 Score!")
+            List = []
 
+        else:
+            messagebox.showerror("WRONG", "Incorrect")
+            List = []
+    else:
+        Add3 = random.randint(50, 100)
+        Add4 = random.randint(10, 50)
+        Ans1 = Add3 * Add4
+        List.append(Ans1)
+        Question += 1
+        Ques1 = simpledialog.askinteger(
+            "Question {}, Score {}/10".format(Question, Score),
+            "What is {} x {} ".format(Add3, Add4))
+        if Question == 15:
+            messagebox.showinfo(
+                "Game Over", "Game Over, Your Score Was {}/15".format(Score))
+            List = []
+            complete = True
+        elif Ques1 in List:
+            Score += 1
+            messagebox.showinfo("Correct", "Correct, +1 Score!")
+            List = []
 
-nutt = tk.Button(text="Home", command=go_home)
-nutt.pack()
-
-def go_home():
-    import main
-    main
-
-
-nutt = tk.Button(text="Home", command=go_home)
-nutt.pack()
+        else:
+            messagebox.showerror("WRONG", "Incorrect")
+            List = []
+#Division goes here
